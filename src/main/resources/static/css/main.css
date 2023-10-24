@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -534,12 +534,43 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+body {
+  font-family: "IM Fell English", serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-color: #16a34a;
+  text-underline-offset: 4px;
+}
+
 .m-4 {
   margin: 1rem;
 }
 
 .flex {
   display: flex;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -554,7 +585,38 @@ video {
   gap: 1rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
 }

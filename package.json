@@ -2,8 +2,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./src/main/resources/static/css/main.css"
   },
-
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.4"
   }
 }
