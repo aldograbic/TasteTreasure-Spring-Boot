@@ -7,7 +7,39 @@
   <body>
     <th:block th:insert="~{fragments/header :: header}"></th:block>
 
-    <main></main>
+    <main>
+      <div class="w-3/5">
+        <div></div>
+        <div class="flex flex-col">
+          <h1>History</h1>
+          <div class="flex">
+            <p class="text-xl leading-loose">
+              In the realm of culinary legends,
+              <span class="text-green-600 font-semibold text-2xl"
+                >Captain Jack Ironpot</span
+              >
+              stands tall as a great leader, remembered for his remarkable
+              <span class="text-green-600 font-semibold"
+                >culinary skills and unwavering spirit</span
+              >
+              . This aged photograph captures the essence of a man whose
+              presence was as grand as the feasts he created. Captain Ironpot
+              was more than a pirate; he was a
+              <span class="text-green-600 font-semibold"
+                >legend of the kitchen</span
+              >, commanding the hearts and taste buds of those who followed him.
+              His memory endures, inspiring all who seek culinary
+              <span class="text-green-600 font-semibold"> excellence</span>.
+            </p>
+            <img
+              src="img/old-pirate-chef-illustration.jpg"
+              alt="Old pirate chef"
+              class="w-96 rounded-full border-4"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
 
     <th:block th:insert="~{fragments/footer :: footer}"></th:block>
   </body>
