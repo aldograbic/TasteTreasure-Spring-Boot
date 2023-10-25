@@ -12,6 +12,10 @@
     @apply flex justify-center;
   }
 
+  .content {
+    @apply md:w-3/5 w-full ml-4 mr-4 flex flex-col items-center;
+  }
+
   h1 {
     @apply text-3xl font-semibold underline underline-offset-4 decoration-green-600 mb-8;
   }
@@ -21,15 +25,15 @@
   }
 
   input {
-    @apply rounded-lg outline outline-2;
+    @apply w-full md:w-96 h-12 rounded-lg outline outline-2 text-base px-4;
+  }
+
+  .button {
+    @apply bg-green-600 text-white font-semibold text-xl rounded-lg outline outline-black cursor-pointer hover:bg-green-700 transition-colors;
   }
 
   [x-cloak] {
-    display: none;
-  }
-
-  .content {
-    @apply md:w-3/5 w-full ml-4 mr-4;
+    @apply hidden;
   }
 
   .written {
