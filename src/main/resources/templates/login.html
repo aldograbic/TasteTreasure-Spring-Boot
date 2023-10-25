@@ -8,17 +8,18 @@
     <th:block th:insert="~{fragments/header :: header}"></th:block>
 
     <main>
-      <div>
-        <div>
-          <label for=""></label>
+      <div class="content">
+        <h1>Login</h1>
+        <div class="flex flex-col">
+          <label for="username">Username</label>
           <input type="text" />
         </div>
-        <div>
-          <label for=""></label>
-          <input type="text" />
+        <div class="flex flex-col">
+          <label for="password">Password</label>
+          <input type="password" />
         </div>
         <div>
-          <input type="submit" value="" />
+          <input type="submit" value="Login" />
         </div>
         <div></div>
       </div>

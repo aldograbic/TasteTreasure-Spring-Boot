@@ -9,7 +9,40 @@
 
     <main>
       <div class="content">
-        <div></div>
+        <div class="text-6xl">
+          <p>AHOY!</p>
+          <p>
+            Welcome to
+            <span class="text-green-600 font-semibold written"
+              >TASTE TREASURE</span
+            >
+          </p>
+          <p>Start your search for the finest recipes on the digital sea</p>
+          <div class="relative mb-16">
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search something.."
+              class="w-96 h-12 text-base px-12"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 absolute top-9 left-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </div>
+        </div>
+
         <div class="flex flex-col">
           <h1>History</h1>
           <div class="md:flex">
@@ -40,12 +73,30 @@
               style="border-radius: 70% 30% 51% 49% / 37% 29% 71% 63%"
             />
           </div>
-          <div class="md:flex">
+          <div
+            class="md:flex relative"
+            x-data="{ tooltip: false, recipe: false }"
+          >
             <button>
-              <img src="img/treasure-chest.png" alt="" class="w-80" />
+              <img
+                src="img/treasure-chest.png"
+                alt=""
+                class="w-80"
+                x-on:mouseover="tooltip = true"
+                x-on:mouseleave="tooltip = false"
+                x-on:click="recipe =! recipe"
+              />
             </button>
 
-            <div class="written hidden">
+            <div
+              x-show="tooltip"
+              class="absolute left-10 pointer-events-none"
+              x-cloak
+            >
+              What could be in here?
+            </div>
+
+            <div class="written absolute" x-show="recipe" x-cloak>
               <h2>Captain Ironpot's Seafood Feast</h2>
               <ul class="text-sm">
                 <li>For the Marinade:</li>

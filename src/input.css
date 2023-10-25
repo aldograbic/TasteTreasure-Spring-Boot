@@ -5,6 +5,7 @@
 @layer components {
   body {
     font-family: "Lora", serif;
+    background-color: #faf0e6;
   }
 
   main {
@@ -17,6 +18,14 @@
 
   h2 {
     @apply text-2xl font-semibold;
+  }
+
+  input {
+    @apply rounded-lg outline outline-2;
+  }
+
+  [x-cloak] {
+    display: none;
   }
 
   .content {
