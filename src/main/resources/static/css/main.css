@@ -535,7 +535,7 @@ video {
 }
 
 body {
-  font-family: "IM Fell English", serif;
+  font-family: "Lora", serif;
 }
 
 main {
@@ -544,7 +544,7 @@ main {
 }
 
 h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 600;
@@ -553,20 +553,63 @@ h1 {
   text-underline-offset: 4px;
 }
 
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.content {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .content {
+    width: 60%;
+  }
+}
+
+.written {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+}
+
 .m-4 {
   margin: 1rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
 }
 
 .flex {
   display: flex;
 }
 
-.w-3\/5 {
-  width: 60%;
+.hidden {
+  display: none;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.w-80 {
+  width: 20rem;
 }
 
 .w-96 {
   width: 24rem;
+}
+
+.basis-1\/2 {
+  flex-basis: 50%;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-col {
@@ -585,14 +628,6 @@ h1 {
   gap: 1rem;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.border-4 {
-  border-width: 4px;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -601,6 +636,11 @@ h1 {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl {
@@ -619,4 +659,18 @@ h1 {
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.outline-2 {
+  outline-width: 2px;
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
 }
