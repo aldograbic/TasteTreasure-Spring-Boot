@@ -536,6 +536,7 @@ video {
 
 body {
   font-family: "Lora", serif;
+  background-color: #faf0e6;
 }
 
 main {
@@ -559,6 +560,16 @@ h2 {
   font-weight: 600;
 }
 
+input {
+  border-radius: 0.5rem;
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+[x-cloak] {
+  display: none;
+}
+
 .content {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -576,8 +587,36 @@ h2 {
   font-style: italic;
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.left-3 {
+  left: 0.75rem;
+}
+
+.top-9 {
+  top: 2.25rem;
+}
+
 .m-4 {
   margin: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .ml-8 {
@@ -588,12 +627,20 @@ h2 {
   display: flex;
 }
 
-.hidden {
-  display: none;
+.h-12 {
+  height: 3rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-96 {
   height: 24rem;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-80 {
@@ -628,9 +675,24 @@ h2 {
   gap: 1rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-lg {
