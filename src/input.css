@@ -4,13 +4,27 @@
 
 @layer components {
   body {
-    font-family: "IM Fell English", serif;
+    font-family: "Lora", serif;
   }
+
   main {
     @apply flex justify-center;
   }
 
   h1 {
-    @apply text-3xl font-semibold underline underline-offset-4 decoration-green-600 mb-4;
+    @apply text-3xl font-semibold underline underline-offset-4 decoration-green-600 mb-8;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  .content {
+    @apply md:w-3/5 w-full ml-4 mr-4;
+  }
+
+  .written {
+    font-family: "IM Fell English", serif;
+    @apply italic;
   }
 }
