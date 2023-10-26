@@ -27,7 +27,6 @@
                 id="search"
                 placeholder="Search something.."
                 class="px-12"
-                id="search-input"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +34,8 @@
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-6 absolute top-9 left-3"
+                class="w-6 h-6 absolute top-9 left-3 cursor-pointer"
+                onclick="searchRecipes()"
               >
                 <path
                   stroke-linecap="round"
@@ -44,7 +44,6 @@
                 />
               </svg>
             </div>
-            <button class="button" onclick="searchRecipes()">Search</button>
             <div class="relative w-full">
               <button
                 class="mb-12"
