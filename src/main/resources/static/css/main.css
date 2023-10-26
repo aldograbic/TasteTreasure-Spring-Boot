@@ -545,12 +545,12 @@ main {
 }
 
 .content {
-  margin-left: 1rem;
-  margin-right: 1rem;
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -598,6 +598,8 @@ input {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -636,6 +638,10 @@ input {
   position: relative;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .left-1\/2 {
   left: 50%;
 }
@@ -654,6 +660,10 @@ input {
 
 .m-4 {
   margin: 1rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .mb-16 {
@@ -690,6 +700,10 @@ input {
 
 .h-px {
   height: 1px;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-6 {
@@ -745,8 +759,18 @@ input {
   gap: 1rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .gap-8 {
   gap: 2rem;
+}
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-lg {
@@ -789,6 +813,11 @@ input {
   padding-right: 0.75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -808,15 +837,14 @@ input {
   line-height: 1;
 }
 
-<<<<<<< HEAD
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-=======
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
->>>>>>> c27cfc5ddeef773856b8b38a5182314d7f4d6125
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {

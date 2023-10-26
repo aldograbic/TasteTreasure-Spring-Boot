@@ -13,7 +13,7 @@
   }
 
   .content {
-    @apply md:w-3/5 w-full ml-4 mr-4 flex flex-col items-center;
+    @apply md:w-3/5 w-full pl-4 pr-4 flex flex-col items-center;
   }
 
   h1 {
@@ -29,7 +29,7 @@
   }
 
   .button {
-    @apply bg-green-600 text-white font-semibold text-xl rounded-lg outline outline-black cursor-pointer hover:bg-green-700 transition-colors;
+    @apply bg-green-600 text-white font-semibold text-xl rounded-lg outline outline-black cursor-pointer hover:bg-green-700 transition-colors px-6;
   }
 
   [x-cloak] {
