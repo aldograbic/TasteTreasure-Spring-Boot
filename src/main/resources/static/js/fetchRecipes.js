@@ -1,11 +1,12 @@
-const APP_ID = f995a27c;
-const APP_KEY = e1979cdadca32155ca0b295a7449529d;
+const APP_ID = "f995a27c";
+const APP_KEY = "e1979cdadca32155ca0b295a7449529d"; 
 
 const API_URL = "https://api.edamam.com/api/recipes/v2";
 
-async function fetchRecipes() {
+async function fetchRecipes(query) {
   const response = await fetch(
-    API_URL + "?q=chocolate" + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
+    API_URL + "?q=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
   );
-  console.log(response.data);
+  const data = await response.json(); 
+  console.log(data);
 }
