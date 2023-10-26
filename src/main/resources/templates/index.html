@@ -18,28 +18,64 @@
             >
           </p>
           <p>Start your search for the finest recipes on the digital sea</p>
-          <div class="relative mb-16">
-            <input
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Search something.."
-              class="px-12"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6 absolute top-9 left-3"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+          <div class="flex items-center" x-data="{ tooltipRandom: false}">
+            <div class="relative mb-16">
+              <input
+                type="search"
+                name="search"
+                id="search"
+                placeholder="Search something.."
+                class="px-12"
               />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 absolute top-9 left-3"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </div>
+            <div class="relative w-full">
+              <button
+                class="mb-12"
+                x-on:mouseover="tooltipRandom = true"
+                x-on:mouseleave="tooltipRandom = false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-16"
+                  viewBox="0 0 256 256"
+                >
+                  <g fill="currentColor" fill-rule="evenodd">
+                    <path
+                      d="M24.898 100.907a7.97 7.97 0 0 1 8.035-7.935l80.011.623c4.419.034 8.209 3.635 8.466 8.042l.517 8.868l26.68-42.392a7.776 7.776 0 0 1 10.94-2.349l66.996 44.369a8.03 8.03 0 0 1 2.275 11.113l-43.766 66.506c-2.432 3.695-7.447 4.8-11.197 2.47l-51.928-32.265v26.49c0 4.419-3.583 8-7.993 8H32.498a7.949 7.949 0 0 1-7.959-7.998l.36-83.542zm11.828 6.694l-.189 71.811l74.127.073l-.035-29.78l-5.954-4.119c-1.809-1.25-2.375-3.81-1.257-5.71L111 127l-.466-19.749l-73.808.35zM156.483 79L118 138.79l60.965 38.32l37.612-58.539L156.483 79z"
+                    />
+                    <circle cx="138" cy="135" r="8" />
+                    <circle cx="165" cy="130" r="8" />
+                    <circle cx="193" cy="125" r="8" />
+                    <circle cx="50" cy="124" r="8" />
+                    <circle cx="73" cy="145" r="8" />
+                    <circle cx="95" cy="123" r="8" />
+                    <circle cx="51" cy="165" r="8" />
+                    <circle cx="95" cy="165" r="8" />
+                  </g>
+                </svg>
+              </button>
+              <div
+                x-show="tooltipRandom"
+                class="absolute pointer-events-none text-base font-semibold bottom-8"
+                x-cloak
+              >
+                Random recipe
+              </div>
+            </div>
           </div>
         </div>
 
@@ -157,7 +193,7 @@
           </p>
 
           <div class="flex gap-8">
-            <div>
+            <div class="text-sm">
               <h2>Swashbuckler's Scallops</h2>
               <p>
                 Prepare to be enchanted by the exquisite Swashbuckler's
@@ -167,7 +203,7 @@
                 testament to Captain Jack Ironpot's culinary expertise.
               </p>
             </div>
-            <div>
+            <div class="text-sm">
               <h2>Shipwreck Beans</h2>
               <p>
                 Shipwreck Beans are a comforting and hearty dish that harkens
@@ -177,7 +213,7 @@
                 the simple pleasures found in a warm and filling meal.
               </p>
             </div>
-            <div>
+            <div class="text-sm">
               <h2>Seafood Suquet</h2>
               <p>
                 Dive into the rich and flavorful world of Seafood Suquet, a

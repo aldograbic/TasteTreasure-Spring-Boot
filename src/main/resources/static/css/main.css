@@ -537,6 +537,9 @@ video {
 body {
   font-family: "Lora", serif;
   background-color: #faf0e6;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
@@ -545,12 +548,12 @@ main {
 }
 
 .content {
-  margin-left: 1rem;
-  margin-right: 1rem;
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -598,6 +601,8 @@ input {
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -636,6 +641,10 @@ input {
   position: relative;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .left-1\/2 {
   left: 50%;
 }
@@ -656,6 +665,10 @@ input {
   margin: 1rem;
 }
 
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -666,6 +679,10 @@ input {
 
 .ml-8 {
   margin-left: 2rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .flex {
@@ -690,6 +707,10 @@ input {
 
 .h-px {
   height: 1px;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-6 {
@@ -745,8 +766,18 @@ input {
   gap: 1rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .gap-8 {
   gap: 2rem;
+}
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-lg {
@@ -759,6 +790,15 @@ input {
 
 .border-0 {
   border-width: 0px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-gray-600 {
@@ -787,6 +827,11 @@ input {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .text-center {
