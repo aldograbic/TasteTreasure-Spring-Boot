@@ -7,7 +7,39 @@
   <body>
     <th:block th:insert="~{fragments/header :: header}"></th:block>
 
-    <main></main>
+    <main>
+      <div class="content">
+        <h1>Contact</h1>
+        <p class="text-xl text-center mb-6">
+          If you have any questions, suggestions, or even just want to share
+          your favorite pirate-inspired recipes, feel free to drop us a message
+          in a bottle. <br />We're always eager to hear from fellow scallywags
+          and culinary adventurers.
+        </p>
+        <form action="" method="post">
+          <div class="flex flex-col mb-6">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" />
+          </div>
+          <div class="flex flex-col mb-6">
+            <label for="email">E-mail address</label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+          </div>
+          <div class="flex flex-col mb-6">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="10"
+              class="resize-none w-full md:w-96 rounded-lg outline outline-2 text-base p-4"
+            ></textarea>
+          </div>
+          <div class="mb-6">
+            <input type="submit" value="Send" class="button" />
+          </div>
+        </form>
+      </div>
+    </main>
 
     <th:block th:insert="~{fragments/footer :: footer}"></th:block>
   </body>
