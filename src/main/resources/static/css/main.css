@@ -808,15 +808,14 @@ input {
   line-height: 1;
 }
 
-<<<<<<< HEAD
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-=======
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
->>>>>>> c27cfc5ddeef773856b8b38a5182314d7f4d6125
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {
