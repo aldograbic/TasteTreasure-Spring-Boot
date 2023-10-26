@@ -3,6 +3,7 @@
   <head>
     <th:block th:insert="~{fragments/head :: head}"></th:block>
     <title>Taste Treasure</title>
+    <script th:src="@{js/fetchRecipes.js}" defer="defer"></script>
   </head>
   <body>
     <th:block th:insert="~{fragments/header :: header}"></th:block>
@@ -26,6 +27,7 @@
                 id="search"
                 placeholder="Search something.."
                 class="px-12"
+                id="search-input"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,6 +44,7 @@
                 />
               </svg>
             </div>
+            <button class="button" onclick="searchRecipes()">Search</button>
             <div class="relative w-full">
               <button
                 class="mb-12"

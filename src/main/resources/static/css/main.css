@@ -725,6 +725,10 @@ input {
   width: 24rem;
 }
 
+.w-\[4\.5rem\] {
+  width: 4.5rem;
+}
+
 .w-full {
   width: 100%;
 }
