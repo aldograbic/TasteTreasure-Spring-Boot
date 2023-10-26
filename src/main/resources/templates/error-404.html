@@ -7,7 +7,21 @@
   <body>
     <th:block th:insert="~{fragments/header :: header}"></th:block>
 
-    <main></main>
+    <main>
+      <div class="content text-center">
+        <img
+          src="img/404-pirate-removebg.png"
+          alt="Pirate with telescope"
+          class="w-96"
+        />
+        <h1 class="text-6xl">404</h1>
+        <p class="text-2xl mb-6">
+          Arrr, shiver me timbers!<br />The page you were looking for doesn't
+          exist.
+        </p>
+        <a href="/" class="button py-4">Back to homepage</a>
+      </div>
+    </main>
 
     <th:block th:insert="~{fragments/footer :: footer}"></th:block>
   </body>
