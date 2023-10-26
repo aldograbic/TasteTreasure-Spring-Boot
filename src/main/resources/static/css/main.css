@@ -717,6 +717,10 @@ input {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.resize-none {
+  resize: none;
+}
+
 .list-disc {
   list-style-type: disc;
 }
@@ -771,6 +775,10 @@ input {
   background-repeat: no-repeat;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -779,6 +787,10 @@ input {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-2xl {
@@ -796,9 +808,15 @@ input {
   line-height: 1;
 }
 
+<<<<<<< HEAD
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+=======
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+>>>>>>> c27cfc5ddeef773856b8b38a5182314d7f4d6125
 }
 
 .text-sm {
@@ -878,5 +896,9 @@ input {
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
+  }
+
+  .md\:w-96 {
+    width: 24rem;
   }
 }
