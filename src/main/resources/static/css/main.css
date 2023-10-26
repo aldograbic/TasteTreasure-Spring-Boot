@@ -725,6 +725,10 @@ input {
   width: 24rem;
 }
 
+.w-\[4\.5rem\] {
+  width: 4.5rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -790,15 +794,6 @@ input {
 
 .border-0 {
   border-width: 0px;
-}
-
-.border-2 {
-  border-width: 2px;
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-gray-600 {
