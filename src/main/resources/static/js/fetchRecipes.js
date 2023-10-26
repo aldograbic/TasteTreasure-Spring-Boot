@@ -5,8 +5,7 @@ const API_URL = "https://api.edamam.com/api/recipes/v2";
 
 async function fetchRecipes() {
   const response = await fetch(
-    API_URL + "?q= " + "chocolate" + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
+    API_URL + "?q=chocolate" + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
   );
-  const data = await response.json();
-  console.log(data);
+  console.log(response.data);
 }
