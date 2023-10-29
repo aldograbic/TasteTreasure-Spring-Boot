@@ -25,11 +25,13 @@
     @apply text-2xl font-semibold;
   }
 
-  input {
+  input,
+  select {
     @apply w-full md:w-96 h-12 rounded-lg outline outline-2 text-base px-4;
   }
 
-  .button {
+  .button,
+  input[type="submit"] {
     @apply bg-green-600 text-white font-semibold text-xl rounded-lg outline outline-black cursor-pointer hover:bg-green-700 transition-colors px-6;
   }
 

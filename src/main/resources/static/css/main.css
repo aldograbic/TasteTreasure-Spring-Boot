@@ -578,7 +578,8 @@ h2 {
   font-weight: 600;
 }
 
-input {
+input,
+  select {
   height: 3rem;
   width: 100%;
   border-radius: 0.5rem;
@@ -591,12 +592,14 @@ input {
 }
 
 @media (min-width: 768px) {
-  input {
+  input,
+  select {
     width: 24rem;
   }
 }
 
-.button {
+.button,
+  input[type="submit"] {
   cursor: pointer;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
@@ -615,7 +618,8 @@ input {
   transition-duration: 150ms;
 }
 
-.button:hover {
+.button:hover,
+  input[type="submit"]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
