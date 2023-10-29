@@ -9,6 +9,10 @@ async function fetchRecipes(query) {
   );
   const data = await response.json();
   console.log(data);
+
+  const recipesURL = `/recipes?query=${encodeURIComponent(query)}`;
+
+  window.location.href = recipesURL;
 }
 
 async function searchRecipes() {
