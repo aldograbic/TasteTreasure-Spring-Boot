@@ -10,5 +10,5 @@ public class RecipeController {
     public String getRecipePage() {
         return "recipe";
     }
-    
+
 }

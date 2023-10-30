@@ -1,7 +1,7 @@
 package com.project.TasteTreasure.classes;
 
 public class User {
-    
+
     private int id;
     private String firstName;
     private String lastName;
@@ -11,7 +11,8 @@ public class User {
     private int countryId;
     private Country country;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String firstName, String lastName, String username, String email, String password, int countryId) {
         this.firstName = firstName;

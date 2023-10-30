@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.project.TasteTreasure.classes.User;
 
 @Repository
-public class JdbcUserRepository implements UserRepository{
+public class JdbcUserRepository implements UserRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -16,8 +16,9 @@ public class JdbcUserRepository implements UserRepository{
 
     @Override
     public void saveUser(User user) {
-        String sql = "INSERT INTO users (first_name, last_name, username, email, password, country_id) " + 
-                    "VALUES (?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail(), user.getPassword(), user.getCountryId());
+        String sql = "INSERT INTO users (first_name, last_name, username, email, password, country_id) " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, user.getFirstName(), user.getLastName(), user.getUsername(), user.getEmail(),
+                user.getPassword(), user.getCountryId());
     }
 }
