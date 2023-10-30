@@ -1,5 +1,5 @@
 package com.project.TasteTreasure.repositories;
- 
+
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.project.TasteTreasure.classes.Country;
 
 @Repository
-public class JdbcCountryRepository implements CountryRepository{
+public class JdbcCountryRepository implements CountryRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -22,7 +22,7 @@ public class JdbcCountryRepository implements CountryRepository{
         return jdbcTemplate.query(sql, new CountryRowMapper());
     }
 
-     @Override
+    @Override
     public Country getCountryById(int countryId) {
         String sql = "SELECT id, code, name FROM countries WHERE id = ?";
 

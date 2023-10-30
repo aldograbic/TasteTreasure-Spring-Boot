@@ -26,7 +26,7 @@ public class UserRowMapper implements RowMapper<User> {
         user.setEmail(rs.getString("email"));
         user.setPassword(rs.getString("password"));
         user.setCountryId(rs.getInt("country_id"));
-        
+
         int countryId = rs.getInt("country_id");
         Country country = countryRepository.getCountryById(countryId);
         if (country != null) {
