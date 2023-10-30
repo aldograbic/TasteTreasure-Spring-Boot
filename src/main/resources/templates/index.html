@@ -9,6 +9,12 @@
     <th:block th:insert="~{fragments/header :: header}"></th:block>
 
     <main>
+      <th:block
+        th:insert="~{fragments/successMessage :: successMessage}"
+      ></th:block>
+      <th:block
+        th:insert="~{fragments/errorMessage :: errorMessage}"
+      ></th:block>
       <div class="content">
         <div class="text-6xl">
           <p>AHOY!</p>
