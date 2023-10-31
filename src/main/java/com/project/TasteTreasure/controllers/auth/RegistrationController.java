@@ -12,8 +12,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.TasteTreasure.classes.Country;
 import com.project.TasteTreasure.classes.User;
-import com.project.TasteTreasure.repositories.CountryRepository;
-import com.project.TasteTreasure.repositories.UserRepository;
+import com.project.TasteTreasure.repositories.country.CountryRepository;
+import com.project.TasteTreasure.repositories.user.UserRepository;
 
 @Controller
 public class RegistrationController {

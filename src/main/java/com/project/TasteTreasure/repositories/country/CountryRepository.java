@@ -1,4 +1,4 @@
-package com.project.TasteTreasure.repositories;
+package com.project.TasteTreasure.repositories.country;
 
 import java.util.List;
 

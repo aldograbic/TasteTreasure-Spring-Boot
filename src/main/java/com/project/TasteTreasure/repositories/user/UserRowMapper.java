@@ -1,4 +1,4 @@
-package com.project.TasteTreasure.repositories;
+package com.project.TasteTreasure.repositories.user;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.project.TasteTreasure.classes.Country;
 import com.project.TasteTreasure.classes.User;
+import com.project.TasteTreasure.repositories.country.CountryRepository;
 
 public class UserRowMapper implements RowMapper<User> {
 

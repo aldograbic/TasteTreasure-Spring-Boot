@@ -1,4 +1,4 @@
-package com.project.TasteTreasure.repositories;
+package com.project.TasteTreasure.repositories.user;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
