@@ -17,7 +17,7 @@ public class EmailService {
     public void sendHtmlEmail(String to, String subject, String htmlContent) {
         MimeMessage message = javaMailSender.createMimeMessage();
         MimeMessageHelper helper;
-        
+
         try {
             helper = new MimeMessageHelper(message, true);
             helper.setTo(to);

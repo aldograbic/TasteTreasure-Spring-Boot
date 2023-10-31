@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,9 @@ import com.project.TasteTreasure.repositories.user.UserRepository;
 
 @Controller
 public class RegistrationController {
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     private CountryRepository countryRepository;
@@ -40,13 +45,13 @@ public class RegistrationController {
 
     @PostMapping("processRegistration")
     public String processRegistration(@RequestParam("firstName") String firstName,
-                                @RequestParam("lastName") String lastName,
-                                @RequestParam("country") String countryName,
-                                @RequestParam("email") String email,
-                                @RequestParam("username") String username,
-                                @RequestParam("password") String password,
-                                @RequestParam("confirmPassword") String confirmPassword,
-                                RedirectAttributes redirectAttributes) {
+            @RequestParam("lastName") String lastName,
+            @RequestParam("country") String countryName,
+            @RequestParam("email") String email,
+            @RequestParam("username") String username,
+            @RequestParam("password") String password,
+            @RequestParam("confirmPassword") String confirmPassword,
+            RedirectAttributes redirectAttributes) {
 
         int countryId = countryRepository.getCountryIdByName(countryName);
 
@@ -69,8 +74,8 @@ public class RegistrationController {
             return "redirect:/registration";
         }
 
-        // String encryptedPassword = passwordEncoder.encode(user.getPassword());
-        // user.setPassword(encryptedPassword);
+        String encryptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
 
         String token = UUID.randomUUID().toString();
         user.setConfirmationToken(token);
@@ -84,15 +89,19 @@ public class RegistrationController {
 
             String to = user.getEmail();
             String subject = "Confirm your e-mail - Taste Treasure";
-            String htmlContent = "<html><body><h1>AHOY, " + user.getFirstName() + "!</h1> <p><b>Confirm your e-mail address by clicking on the link below:</br> <a href='" + confirmationLink + "'>Click here!</a></body></html>";
+            String htmlContent = "<html><body><h1>AHOY, " + user.getFirstName()
+                    + "!</h1> <p><b>Confirm your e-mail address by clicking on the link below:</br> <a href='"
+                    + confirmationLink + "'>Click here!</a></body></html>";
             emailService.sendHtmlEmail(to, subject, htmlContent);
 
-            redirectAttributes.addFlashAttribute("successMessage", "We send yer an e-mail with the instructions in a bottle across the digital see!");
+            redirectAttributes.addFlashAttribute("successMessage",
+                    "We send yer an e-mail with the instructions in a bottle across the digital see!");
 
         } catch (Exception ex) {
-            redirectAttributes.addFlashAttribute("errorMessage", "Avast, ye matey! Thar be an error on the horizon! But fear not, for we'll be patchin' things up with the help of our trusty crew!");
+            redirectAttributes.addFlashAttribute("errorMessage",
+                    "Avast, ye matey! Thar be an error on the horizon! But fear not, for we'll be patchin' things up with the help of our trusty crew!");
         }
-        
+
         return "redirect:/";
     }
 }

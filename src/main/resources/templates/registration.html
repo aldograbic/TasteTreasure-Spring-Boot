@@ -41,6 +41,7 @@
           <div class="flex flex-col mb-6">
             <label for="country">Country</label>
             <select name="country" id="country" autocomplete="country-name">
+              <option selected disabled>Select an option</option>
               <option
                 th:each="country : ${countries}"
                 th:value="${country}"
