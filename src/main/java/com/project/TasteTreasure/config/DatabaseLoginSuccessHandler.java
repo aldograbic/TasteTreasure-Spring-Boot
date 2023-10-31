@@ -29,9 +29,9 @@ public class DatabaseLoginSuccessHandler extends SavedRequestAwareAuthentication
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
             Authentication authentication) throws ServletException, IOException {
 
-        UserDetails authenticatedUserDetails = (UserDetails) authentication.getPrincipal();
-        String username = authenticatedUserDetails.getUsername();
-        User user = userRepository.findByUsername(username);
+        // UserDetails authenticatedUserDetails = (UserDetails) authentication.getPrincipal();
+        // String username = authenticatedUserDetails.getUsername();
+        // User user = userRepository.findByUsername(username);
 
         response.sendRedirect("/?success");
     }
