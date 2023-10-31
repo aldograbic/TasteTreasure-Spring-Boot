@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <th:block th:insert="~{fragments/head :: head}"></th:block>
+    <script th:src="@{js/checkPassword.js}" defer="defer"></script>
     <title>Registration | Taste Treasure</title>
   </head>
   <body>
@@ -74,7 +75,9 @@
           </div>
 
           <div class="flex flex-col mb-6">
-            <label for="confirmPassword">Confirm password</label>
+            <label for="confirmPassword" id="passwordWarning"
+              >Confirm password</label
+            >
             <input
               type="password"
               name="confirmPassword"
