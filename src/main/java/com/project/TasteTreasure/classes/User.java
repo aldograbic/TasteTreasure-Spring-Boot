@@ -9,6 +9,8 @@ public class User {
     private String email;
     private String password;
     private int countryId;
+    private boolean emailVerified;
+    private String confirmationToken;
     private Country country;
 
     public User() {
@@ -77,6 +79,22 @@ public class User {
 
     public void setCountryId(int countryId) {
         this.countryId = countryId;
+    }
+
+    public boolean isEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(boolean emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public String getConfirmationToken() {
+        return confirmationToken;
+    }
+
+    public void setConfirmationToken(String confirmationToken) {
+        this.confirmationToken = confirmationToken;
     }
 
     public Country getCountry() {

@@ -13,6 +13,8 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `country_id` int DEFAULT NULL,
+  `email_verified` boolean DEFAULT 0,
+  `confirmation_token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `country_id` (`country_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
