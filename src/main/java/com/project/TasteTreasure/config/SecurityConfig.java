@@ -28,24 +28,26 @@ public class SecurityConfig {
         @Bean
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                 http
-                    .csrf((csrf -> csrf.disable()))
-                    .authorizeHttpRequests((auth) -> auth
-                                    .requestMatchers("/login", "/registration", "/processRegistration", "/confirm/**", "/", "/contact",
-                                                    "/css/**", "/img/**", "/js/**", "/error", "/account", "/recipes/**")
-                                    .permitAll()
-                                    .anyRequest().authenticated())
-                    .formLogin((formLogin) -> formLogin
-                                    .loginPage("/login")
-                                    .loginProcessingUrl("/login")
-                                    .failureHandler(databaseLoginFailureHandler)
-                                    .successHandler(databaseLoginSuccessHandler)
-                                    .permitAll())
-                    .logout((logout) -> logout
-                                    .logoutUrl("/logout")
-                                    .logoutSuccessUrl("/?logoutSuccess")
-                                    .invalidateHttpSession(true)
-                                    .permitAll())
-                    .httpBasic(Customizer.withDefaults());
+                                .csrf((csrf -> csrf.disable()))
+                                .authorizeHttpRequests((auth) -> auth
+                                                .requestMatchers("/login", "/registration", "/processRegistration",
+                                                                "/confirm/**", "/", "/contact",
+                                                                "/css/**", "/img/**", "/js/**", "/error", "/account",
+                                                                "/owl-carousel-resources/**", "/recipes/**")
+                                                .permitAll()
+                                                .anyRequest().authenticated())
+                                .formLogin((formLogin) -> formLogin
+                                                .loginPage("/login")
+                                                .loginProcessingUrl("/login")
+                                                .failureHandler(databaseLoginFailureHandler)
+                                                .successHandler(databaseLoginSuccessHandler)
+                                                .permitAll())
+                                .logout((logout) -> logout
+                                                .logoutUrl("/logout")
+                                                .logoutSuccessUrl("/?logoutSuccess")
+                                                .invalidateHttpSession(true)
+                                                .permitAll())
+                                .httpBasic(Customizer.withDefaults());
                 return http.build();
         }
 

@@ -43,4 +43,73 @@
     font-family: "IM Fell English", serif;
     @apply italic;
   }
+
+
+
+  .clear{
+    clear:both;
+  }
+    
+  .carousel-img{
+    max-width:100%;
+    border:0px;
+  }
+    
+  .carousel-ul,.carousel-ol{
+    list-style:none;
+  }
+    
+  .carousel-a{
+    text-decoration:none;
+    color:inherit;
+    outline:none;
+    transition:all 0.4s ease-in-out;
+    -webkit-transition:all 0.4s ease-in-out;
+  }
+    
+  .carousel-a:focus, .carousel-a:active, .carousel-a:visited, .carousel-a:hover{
+    text-decoration:none;
+    outline:none;
+  }
+    
+  .carousel-a:hover{
+    color:#e73700
+  }
+    
+  .carousel-h2{
+    margin-bottom: 48px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    position:relative;
+    text-transform: capitalize;
+  }
+    
+  .recipes-section{
+    padding: 60px 50px;
+  }
+    
+  .recipes-section .owl_stage{
+    margin: 15px 0;
+    display:flex;
+    display: -webkit-flex;
+  }
+    
+  .recipes-section .item{
+    margin: 0 15px 60px;
+    width:320px;
+    height:400px;
+    display:flex;
+    display: -webkit-flex;
+    align-items:flex-end;
+    -webkit-align-items: flex-end;
+    background: #343434 no-repeat center center / cover;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
 }
