@@ -223,10 +223,55 @@
             </div>
           </div>
         </div>
+        <div class="recipes-section">
+          <div class="owl-carousel custom-carousel owl-theme">
+            <div class="item active">
+              <div class="item-desc">
+                <h3>Croatia</h3>
+                <p>Sexy recepti iz HRVATKSE PRIPIZDINE</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-desc">
+                <h3>Italy</h3>
+                <p>Sexy recepti iz TALIJANSKE PRIPIZDINE</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-desc">
+                <h3>Spain</h3>
+                <p>Sexy recepti iz SPANJOLSKE PRIPIZDINE</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-desc">
+                <h3>Mexico</h3>
+                <p>Sexy recepti iz MEKSIČKE PRIPIZDINE</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="recipes"></div>
       </div>
     </main>
 
     <th:block th:insert="~{fragments/footer :: footer}"></th:block>
+
+    <script>
+      $(".custom-carousel").owlCarousel({
+        autoWidth: true,
+        loop: true,
+      });
+
+      $(document).ready(function () {
+        $(".custom-carousel .item").hover(function () {
+          $(".custom-carousel .item").not($(this)).removeClass("active");
+          $(this).toggleClass("active");
+        });
+      });
+    </script>
   </body>
 </html>
