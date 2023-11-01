@@ -9,4 +9,8 @@ public interface UserRepository {
     User findByUsername(String username);
 
     User findByEmail(String email);
+
+    User findByConfirmationToken(String token);
+
+    void updateEmailVerification(User user);
 }
