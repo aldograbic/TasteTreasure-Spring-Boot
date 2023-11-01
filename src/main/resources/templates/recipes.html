@@ -3,6 +3,10 @@
   <head>
     <th:block th:insert="~{fragments/head :: head}"></th:block>
     <title>Recipes | Taste Treasure</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <th:block th:insert="~{fragments/header :: header}"></th:block>
@@ -223,54 +227,56 @@
             </div>
           </div>
         </div>
-        <div class="recipes-section">
-          <div class="owl-carousel custom-carousel owl-theme">
-            <div class="item active">
-              <div class="item-desc">
-                <h3>Croatia</h3>
-                <p>Sexy recepti iz HRVATKSE PRIPIZDINE</p>
+        <div class="mt-8">
+          <h2 class="text-center mb-4">Based on location</h2>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p>American</p>
+                <button>Go &rarr;</button>
               </div>
-            </div>
-
-            <div class="item">
-              <div class="item-desc">
-                <h3>Italy</h3>
-                <p>Sexy recepti iz TALIJANSKE PRIPIZDINE</p>
+              <div class="swiper-slide">
+                <p>Asian</p>
+                <button>Go &rarr;</button>
               </div>
-            </div>
-
-            <div class="item">
-              <div class="item-desc">
-                <h3>Spain</h3>
-                <p>Sexy recepti iz SPANJOLSKE PRIPIZDINE</p>
+              <div class="swiper-slide">
+                <p>Caribbean</p>
+                <button>Go &rarr;</button>
               </div>
-            </div>
-
-            <div class="item">
-              <div class="item-desc">
-                <h3>Mexico</h3>
-                <p>Sexy recepti iz MEKSIČKE PRIPIZDINE</p>
+              <div class="swiper-slide">
+                <p>Central Europe</p>
+                <button>Go &rarr;</button>
+              </div>
+              <div class="swiper-slide">
+                <p>Eastern Europe</p>
+                <button>Go &rarr;</button>
+              </div>
+              <div class="swiper-slide">
+                <p>Indian</p>
+                <button>Go &rarr;</button>
+              </div>
+              <div class="swiper-slide">
+                <p>Italian</p>
+                <button>Go &rarr;</button>
+              </div>
+              <div class="swiper-slide">
+                <p>Mexican</p>
+                <button>Go &rarr;</button>
               </div>
             </div>
           </div>
         </div>
+
         <div id="recipes"></div>
       </div>
     </main>
 
     <th:block th:insert="~{fragments/footer :: footer}"></th:block>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      $(".custom-carousel").owlCarousel({
-        autoWidth: true,
-        loop: true,
-      });
-
-      $(document).ready(function () {
-        $(".custom-carousel .item").hover(function () {
-          $(".custom-carousel .item").not($(this)).removeClass("active");
-          $(this).toggleClass("active");
-        });
+      var swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
       });
     </script>
   </body>
