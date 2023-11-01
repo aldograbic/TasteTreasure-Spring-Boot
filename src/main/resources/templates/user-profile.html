@@ -9,7 +9,13 @@
 
     <main>
       <div class="content">
-        <div>ime prezime, zastavica</div>
+        <div class="flex items-center gap-2 text-2xl">
+          <p th:text="${user.firstName + ' ' + user.lastName}"></p>
+          <span
+            ><img
+              th:src="@{${'https://flagsapi.com/' + countryCode + '/flat/48.png'}}"
+          /></span>
+        </div>
         <div>
           <h1>My recipes</h1>
         </div>

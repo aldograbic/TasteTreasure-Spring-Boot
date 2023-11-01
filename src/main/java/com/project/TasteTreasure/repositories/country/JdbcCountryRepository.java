@@ -34,4 +34,10 @@ public class JdbcCountryRepository implements CountryRepository {
         String sql = "SELECT id FROM countries WHERE name = ?";
         return jdbcTemplate.queryForObject(sql, Integer.class, countryName);
     }
+
+    @Override
+    public String getCountryCodeById(int countryId) {
+        String sql = "SELECT code FROM countries WHERE id = ?";
+        return jdbcTemplate.queryForObject(sql, String.class, countryId);
+    }
 }

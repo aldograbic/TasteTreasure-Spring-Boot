@@ -11,4 +11,6 @@ public interface CountryRepository {
     Country getCountryById(int countryId);
 
     int getCountryIdByName(String countryName);
+
+    String getCountryCodeById(int countryId);
 }

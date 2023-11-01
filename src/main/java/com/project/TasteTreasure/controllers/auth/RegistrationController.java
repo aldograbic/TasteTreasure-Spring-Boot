@@ -103,4 +103,26 @@ public class RegistrationController {
 
         return "redirect:/";
     }
+
+    @GetMapping("/confirm")
+    public String confirmEmail(@RequestParam("token") String token, RedirectAttributes redirectAttributes) {
+
+        User user = userRepository.findByConfirmationToken(token);
+
+        if (user == null) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Wrong token for email confirmation, matey!");
+            return "redirect:/";
+        }
+
+        if (user.isEmailVerified()) {
+            redirectAttributes.addFlashAttribute("infoMessage", "Yarr, the email address be confirmed already, matey!");
+            return "redirect:/";
+        }
+
+        user.setEmailVerified(true);
+        userRepository.updateEmailVerification(user);
+        redirectAttributes.addFlashAttribute("successMessage", "Ye have successfully confirmed yer email address!");
+
+        return "redirect:/";
+    }
 }
