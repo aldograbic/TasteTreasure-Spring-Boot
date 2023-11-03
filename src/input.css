@@ -57,7 +57,29 @@
     background-color: #faf0e6;
   }
 
-  .img-SouthKorea{
+  .img-SouthKorea {
     width: 124px;
+  }
+
+  .slide-right {
+    animation: slide-right 6s cubic-bezier(0.3, 0.5, 0.7, 0.7) both;
+  }
+
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(5vw) translateY(-1vh) rotate(-5deg);
+    }
+    50% {
+      transform: translateX(10vw) translateY(0) rotate(0deg);
+    }
+    75% {
+      transform: translateX(15vw) translateY(1vh) rotate(5deg);
+    }
+    100% {
+      transform: translateX(20vw) translateY(0) rotate(0deg);
+    }
   }
 }
