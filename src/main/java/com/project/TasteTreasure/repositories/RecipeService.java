@@ -39,8 +39,6 @@ public class RecipeService {
     try {
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode root = objectMapper.readTree(responseBody);
-
-        // Assuming the response structure has a "hits" array
         JsonNode hits = root.path("hits");
 
         for (JsonNode hit : hits) {

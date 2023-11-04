@@ -231,44 +231,97 @@
 
             <div
               x-show="tooltip"
-              class="absolute left-10 pointer-events-none"
+              class="absolute left-10 pointer-events-none bg-white outline rounded-lg outline-2 p-2"
               x-cloak
             >
               What could be in here?
             </div>
+            <div
+              x-show="recipe"
+              x-cloak
+              class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto"
+              aria-labelledby="modal-title"
+              role="dialog"
+              aria-modal="true"
+            >
+              <div
+                x-cloak
+                @click="recipe = false"
+                x-show="recipe"
+                x-transition:enter="transition ease-out duration-300 transform"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-200 transform"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40"
+                aria-hidden="true"
+              ></div>
 
-            <div class="written absolute" x-show="recipe" x-cloak>
-              <h2>Captain Ironpot's Seafood Feast</h2>
-              <ul class="text-sm">
-                <li>For the Marinade:</li>
-                <ul class="list-disc ml-8">
-                  <li>1/4 cup olive oil</li>
-                  <li>3 cloves garlic, minced</li>
-                  <li>2 tablespoons fresh lemon juice</li>
-                  <li>1 teaspoon fresh thyme, chopped</li>
-                  <li>1 teaspoon fresh rosemary, chopped</li>
-                  <li>Salt and pepper to taste</li>
-                </ul>
-                <li>For the Seafood:</li>
-                <ul class="list-disc ml-8">
-                  <li>1 pound jumbo shrimp, peeled and deveined</li>
-                  <li>1 pound fresh scallops</li>
-                  <li>1 pound mussels, cleaned and debearded</li>
-                  <li>1 pound clams, cleaned</li>
-                  <li>1 pound fresh salmon fillet, cut into portions</li>
-                  <li>1 pound fresh cod fillet, cut into portions</li>
-                </ul>
-                <li>For the Sauce:</li>
-                <ul class="list-disc ml-8">
-                  <li>2 tablespoons butter</li>
-                  <li>1/4 cup white wine</li>
-                  <li>1/4 cup chicken or seafood broth</li>
-                  <li>1/4 cup heavy cream</li>
-                  <li>Zest of one lemon</li>
-                  <li>Salt and pepper to taste</li>
-                  <li>Fresh parsley, for garnish</li>
-                </ul>
-              </ul>
+              <div
+                x-cloak
+                x-show="recipe"
+                x-transition:enter="transition ease-out duration-300 transform"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-200 transform"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="w-full p-8 overflow-hidden text-left transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
+              >
+                <div class="text-sm written flex justify-center">
+                  <button
+                    @click="recipe = false"
+                    class="absolute top-2 right-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                  <h2>Captain Ironpot's Seafood Feast</h2>
+                  <ul class="text-sm">
+                    <li>For the Marinade:</li>
+                    <ul class="list-disc ml-8">
+                      <li>1/4 cup olive oil</li>
+                      <li>3 cloves garlic, minced</li>
+                      <li>2 tablespoons fresh lemon juice</li>
+                      <li>1 teaspoon fresh thyme, chopped</li>
+                      <li>1 teaspoon fresh rosemary, chopped</li>
+                      <li>Salt and pepper to taste</li>
+                    </ul>
+                    <li>For the Seafood:</li>
+                    <ul class="list-disc ml-8">
+                      <li>1 pound jumbo shrimp, peeled and deveined</li>
+                      <li>1 pound fresh scallops</li>
+                      <li>1 pound mussels, cleaned and debearded</li>
+                      <li>1 pound clams, cleaned</li>
+                      <li>1 pound fresh salmon fillet, cut into portions</li>
+                      <li>1 pound fresh cod fillet, cut into portions</li>
+                    </ul>
+                    <li>For the Sauce:</li>
+                    <ul class="list-disc ml-8">
+                      <li>2 tablespoons butter</li>
+                      <li>1/4 cup white wine</li>
+                      <li>1/4 cup chicken or seafood broth</li>
+                      <li>1/4 cup heavy cream</li>
+                      <li>Zest of one lemon</li>
+                      <li>Salt and pepper to taste</li>
+                      <li>Fresh parsley, for garnish</li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <p class="written text-xl leading-loose basis-1/2">
@@ -295,6 +348,9 @@
             by the swashbuckling spirit of the high seas and the culinary
             prowess of a seasoned pirate, these dishes will transport you to a
             world of bold flavors and daring culinary creativity.
+            <span class="text-green-600 font-semibold"
+              >Let's see if you can find them!</span
+            >
           </p>
 
           <div class="relative" x-data="{ modelOpen: false }">
