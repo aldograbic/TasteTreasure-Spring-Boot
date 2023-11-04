@@ -298,12 +298,52 @@
           </p>
 
           <div class="relative">
-            <img src="img/Pirate-ship.svg" alt="" class="slide-right w-96" />
-            <div>
+            <img
+              src="img/Pirate-ship.svg"
+              alt=""
+              class="w-96"
+              id="animatedPirateShip"
+            />
+            <div id="clickMeDiv" class="hidden absolute left-1/3 top-16">
               <img src="img/arrow-draw.svg" alt="" />
-              <p>Click here</p>
+              <p>Click me</p>
             </div>
           </div>
+
+          <script>
+            function isElementInViewport(el) {
+              var rect = el.getBoundingClientRect();
+              return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <=
+                  (window.innerHeight ||
+                    document.documentElement.clientHeight) &&
+                rect.right <=
+                  (window.innerWidth || document.documentElement.clientWidth)
+              );
+            }
+
+            function handleScrollAnimation() {
+              var element = document.getElementById("animatedPirateShip");
+              var clickMeDiv = document.getElementById("clickMeDiv");
+
+              if (isElementInViewport(element)) {
+                element.classList.add("slide-right");
+
+                // Add an event listener for the animationend event
+                element.addEventListener("animationend", function () {
+                  // Animation is over, show the "Click me" text
+                  clickMeDiv.style.display = "block";
+                  clickMeDiv.classList.add("show-up");
+                });
+
+                window.removeEventListener("scroll", handleScrollAnimation);
+              }
+            }
+
+            window.addEventListener("scroll", handleScrollAnimation);
+          </script>
 
           <!-- <div class="flex gap-8">
             <div class="text-sm">

@@ -681,6 +681,28 @@ input,
   }
 }
 
+.show-up {
+  animation: show-up 2s both;
+  opacity: 0;
+}
+
+@keyframes show-up {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+    opacity: 50%;
+  }
+
+  100% {
+    transform: rotate(10deg);
+    opacity: 100%;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -727,6 +749,10 @@ input,
 
 .top-0 {
   top: 0px;
+}
+
+.top-16 {
+  top: 4rem;
 }
 
 .top-9 {
@@ -817,6 +843,10 @@ input,
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .aspect-square {

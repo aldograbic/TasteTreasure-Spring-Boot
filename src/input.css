@@ -82,4 +82,24 @@
       transform: translateX(20vw) translateY(0) rotate(0deg);
     }
   }
+
+  .show-up {
+    animation: show-up 2s both;
+    opacity: 0;
+  }
+
+  @keyframes show-up {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      transform: rotate(-10deg);
+      opacity: 50%;
+    }
+    100% {
+      transform: rotate(10deg);
+      opacity: 100%;
+    }
+  }
 }
