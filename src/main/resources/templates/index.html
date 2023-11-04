@@ -7,7 +7,7 @@
   <head>
     <th:block th:insert="~{fragments/head :: head}"></th:block>
     <title>Taste Treasure</title>
-    <!-- <script th:src="@{js/fetchRecipes.js}" defer="defer"></script> -->
+    <script th:src="@{js/index.js}" defer="defer"></script>
   </head>
   <body>
     <th:block th:insert="~{fragments/header :: header}"></th:block>
@@ -297,7 +297,7 @@
             world of bold flavors and daring culinary creativity.
           </p>
 
-          <div class="relative">
+          <div class="relative" x-data="{ modelOpen: false }">
             <img
               src="img/Pirate-ship.svg"
               alt=""
@@ -308,78 +308,105 @@
               <img src="img/arrow-draw.svg" alt="" />
               <p>Click me</p>
             </div>
+
+            <div
+              x-show="modelOpen"
+              class="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto"
+              aria-labelledby="modal-title"
+              role="dialog"
+              aria-modal="true"
+            >
+              <div
+                x-cloak
+                @click="modelOpen = false"
+                x-show="modelOpen"
+                x-transition:enter="transition ease-out duration-300 transform"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-200 transform"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40"
+                aria-hidden="true"
+              ></div>
+
+              <div class="grid grid-cols-3 gap-4 w-3/5">
+                <div
+                  x-cloak
+                  x-show="modelOpen"
+                  x-transition:enter="transition ease-out duration-300 transform"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                  x-transition:leave="transition ease-in duration-200 transform"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  class="w-full p-8 overflow-hidden text-left transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
+                >
+                  <div class="text-sm">
+                    <h2>Swashbuckler's Scallops</h2>
+                    <p>
+                      Prepare to be enchanted by the exquisite Swashbuckler's
+                      Scallops. These tender, pan-seared scallops are kissed by
+                      the sea and adorned with a savory sauce that dances on
+                      your taste buds. This dish is a celebration of the ocean's
+                      bounty and a testament to Captain Jack Ironpot's culinary
+                      expertise.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  x-cloak
+                  x-show="modelOpen"
+                  x-transition:enter="transition ease-out duration-300 transform"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                  x-transition:leave="transition ease-in duration-200 transform"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  class="w-full p-8 overflow-hidden text-left transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
+                >
+                  <div class="text-sm">
+                    <h2>Shipwreck Beans</h2>
+                    <p>
+                      Shipwreck Beans are a comforting and hearty dish that
+                      harkens back to the days of seafaring adventure. A medley
+                      of beans, slow-cooked to perfection, is combined with
+                      savory herbs and spices. It's a flavorful journey through
+                      time, reminding us of the simple pleasures found in a warm
+                      and filling meal.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  x-cloak
+                  x-show="modelOpen"
+                  x-transition:enter="transition ease-out duration-300 transform"
+                  x-transition:enter-start="opacity-0"
+                  x-transition:enter-end="opacity-100"
+                  x-transition:leave="transition ease-in duration-200 transform"
+                  x-transition:leave-start="opacity-100"
+                  x-transition:leave-end="opacity-0"
+                  class="w-full p-8 overflow-hidden text-left transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
+                >
+                  <div class="text-sm">
+                    <h2>Seafood Suquet</h2>
+                    <p>
+                      Dive into the rich and flavorful world of Seafood Suquet,
+                      a traditional Catalan stew that Captain Jack Ironpot has
+                      put his own piratical spin on. Loaded with an assortment
+                      of seafood treasures, this dish is simmered in a luscious
+                      broth with aromatic herbs, creating a symphony of flavors
+                      that will transport your senses to the Mediterranean
+                      coast. Prepare for a culinary voyage like no other with
+                      this exquisite seafood suquet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <script>
-            function isElementInViewport(el) {
-              var rect = el.getBoundingClientRect();
-              return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <=
-                  (window.innerHeight ||
-                    document.documentElement.clientHeight) &&
-                rect.right <=
-                  (window.innerWidth || document.documentElement.clientWidth)
-              );
-            }
-
-            function handleScrollAnimation() {
-              var element = document.getElementById("animatedPirateShip");
-              var clickMeDiv = document.getElementById("clickMeDiv");
-
-              if (isElementInViewport(element)) {
-                element.classList.add("slide-right");
-
-                // Add an event listener for the animationend event
-                element.addEventListener("animationend", function () {
-                  // Animation is over, show the "Click me" text
-                  clickMeDiv.style.display = "block";
-                  clickMeDiv.classList.add("show-up");
-                });
-
-                window.removeEventListener("scroll", handleScrollAnimation);
-              }
-            }
-
-            window.addEventListener("scroll", handleScrollAnimation);
-          </script>
-
-          <!-- <div class="flex gap-8">
-            <div class="text-sm">
-              <h2>Swashbuckler's Scallops</h2>
-              <p>
-                Prepare to be enchanted by the exquisite Swashbuckler's
-                Scallops. These tender, pan-seared scallops are kissed by the
-                sea and adorned with a savory sauce that dances on your taste
-                buds. This dish is a celebration of the ocean's bounty and a
-                testament to Captain Jack Ironpot's culinary expertise.
-              </p>
-            </div>
-            <div class="text-sm">
-              <h2>Shipwreck Beans</h2>
-              <p>
-                Shipwreck Beans are a comforting and hearty dish that harkens
-                back to the days of seafaring adventure. A medley of beans,
-                slow-cooked to perfection, is combined with savory herbs and
-                spices. It's a flavorful journey through time, reminding us of
-                the simple pleasures found in a warm and filling meal.
-              </p>
-            </div>
-            <div class="text-sm">
-              <h2>Seafood Suquet</h2>
-              <p>
-                Dive into the rich and flavorful world of Seafood Suquet, a
-                traditional Catalan stew that Captain Jack Ironpot has put his
-                own piratical spin on. Loaded with an assortment of seafood
-                treasures, this dish is simmered in a luscious broth with
-                aromatic herbs, creating a symphony of flavors that will
-                transport your senses to the Mediterranean coast. Prepare for a
-                culinary voyage like no other with this exquisite seafood
-                suquet. Is this conversation helpful so far?
-              </p>
-            </div>
-          </div> -->
         </div>
       </div>
     </main>
