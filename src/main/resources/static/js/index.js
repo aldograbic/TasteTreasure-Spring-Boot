@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clickMeDiv.style.display = "block";
         clickMeDiv.classList.add("show-up");
         element.setAttribute("x-on:click", "modelOpen = !modelOpen");
+        element.classList.add("cursor-pointer");
       });
 
       window.removeEventListener("scroll", handleScrollAnimation);
