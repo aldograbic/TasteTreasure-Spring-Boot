@@ -15,56 +15,56 @@ import com.project.TasteTreasure.repositories.user.CustomUserDetailsService;
 
 @Configuration
 public class SecurityConfig {
-        private final CustomUserDetailsService customUserDetailsService;
+        
+     private final CustomUserDetailsService customUserDetailsService;
 
-        @Autowired
-        public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
-                this.customUserDetailsService = customUserDetailsService;
-        }
+     @Autowired
+     public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
+             this.customUserDetailsService = customUserDetailsService;
+     }
 
-        @Autowired
-        private PasswordEncoder passwordEncoder;
+     @Autowired
+     private PasswordEncoder passwordEncoder;
 
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-                http
-                    .csrf((csrf -> csrf.disable()))
-                    .authorizeHttpRequests((auth) -> auth
-                                    .requestMatchers("/login", "/registration", "/processRegistration",
-                                                    "/confirm/**", "/", "/contact", "/search",
-                                                    "/css/**", "/img/**", "/js/**", "/error", "/account",
-                                                    "/owl-carousel-resources/**", "/recipes/**")
-                                    .permitAll()
-                                    .anyRequest().authenticated())
-                    .formLogin((formLogin) -> formLogin
-                                    .loginPage("/login")
-                                    .loginProcessingUrl("/login")
-                                    .failureHandler(databaseLoginFailureHandler)
-                                    .successHandler(databaseLoginSuccessHandler)
-                                    .permitAll())
-                    .logout((logout) -> logout
-                                    .logoutUrl("/logout")
-                                    .logoutSuccessUrl("/?logoutSuccess")
-                                    .invalidateHttpSession(true)
-                                    .permitAll())
-                    .httpBasic(Customizer.withDefaults());
-                return http.build();
-        }
+     @Bean
+     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+             http
+             .csrf((csrf -> csrf.disable()))
+             .authorizeHttpRequests((auth) -> auth
+                             .requestMatchers("/login", "/registration", "/processRegistration",
+                                             "/confirm/**", "/", "/contact", "/search",
+                                             "/css/**", "/img/**", "/js/**", "/error", "/account",
+                                             "/owl-carousel-resources/**", "/recipes/**")
+                             .permitAll()
+                             .anyRequest().authenticated())
+             .formLogin((formLogin) -> formLogin
+                             .loginPage("/login")
+                             .loginProcessingUrl("/login")
+                             .failureHandler(databaseLoginFailureHandler)
+                             .successHandler(databaseLoginSuccessHandler)
+                             .permitAll())
+             .logout((logout) -> logout
+                             .logoutUrl("/logout")
+                             .logoutSuccessUrl("/?logoutSuccess")
+                             .invalidateHttpSession(true)
+                             .permitAll())
+             .httpBasic(Customizer.withDefaults());
+             return http.build();
+     }
 
-        @Autowired
-        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-                auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder);
-        }
+     @Autowired
+     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+             auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder);
+     }
 
-        @Bean
-        public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
-                return authConfig.getAuthenticationManager();
-        }
+     @Bean
+     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+             return authConfig.getAuthenticationManager();
+     }
 
-        @Autowired
-        private DatabaseLoginFailureHandler databaseLoginFailureHandler;
+     @Autowired
+     private DatabaseLoginFailureHandler databaseLoginFailureHandler;
 
-        @Autowired
-        private DatabaseLoginSuccessHandler databaseLoginSuccessHandler;
-
+     @Autowired
+     private DatabaseLoginSuccessHandler databaseLoginSuccessHandler;
 }

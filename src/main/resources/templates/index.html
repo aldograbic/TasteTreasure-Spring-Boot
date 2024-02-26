@@ -132,7 +132,10 @@
             >
           </p>
           <p>Start your search for the finest recipes on the digital sea</p>
-          <div class="flex items-center relative">
+          <div
+            class="flex items-center relative"
+            x-data="{ showTooltip: false }"
+          >
             <div class="relative mb-16">
               <form action="/search" method="get">
                 <input
@@ -160,7 +163,11 @@
               </form>
             </div>
 
-            <button class="mb-12">
+            <button
+              class="mb-12"
+              @mouseenter="showTooltip = true"
+              @mouseleave="showTooltip = false"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-16"
@@ -180,6 +187,12 @@
                   <circle cx="95" cy="165" r="8" />
                 </g>
               </svg>
+              <div
+                x-show="showTooltip"
+                class="absolute z-10 p-2 bg-white pointer-events-none outline outline-2 text-sm rounded-lg"
+              >
+                Random
+              </div>
             </button>
           </div>
         </div>
