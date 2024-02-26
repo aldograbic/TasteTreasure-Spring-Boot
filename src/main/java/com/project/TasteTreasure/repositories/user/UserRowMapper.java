@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.lang.NonNull;
 
 import com.project.TasteTreasure.classes.Country;
 import com.project.TasteTreasure.classes.User;
@@ -18,7 +19,7 @@ public class UserRowMapper implements RowMapper<User> {
     }
 
     @Override
-    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public User mapRow(@NonNull ResultSet rs, int rowNum) throws SQLException {
         User user = new User();
         user.setId(rs.getInt("id"));
         user.setFirstName(rs.getString("first_name"));
