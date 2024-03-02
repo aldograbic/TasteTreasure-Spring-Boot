@@ -1,6 +1,7 @@
 package com.project.TasteTreasure.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +21,9 @@ public class ContactController {
     @Autowired
     private EmailService emailService;
 
+    @Value("${spring.mail.username}")
+    private String ownerEmail;
+
     @GetMapping("/contact")
     public String getContactPage() {
         return "contact";
@@ -33,7 +37,7 @@ public class ContactController {
             contactRepository.saveContact(contact);
             redirectAttributes.addFlashAttribute("successMessage", "Aye, ye scurvy dog! Yer missive has been delivered to the crow's nest, and we'll be sendin' a reply on the next tide. Keep a weather eye on your inbox!");
 
-            String to = "tastetreasure.official@gmail.com";
+            String to = ownerEmail;
             String subject = "New contact message from " + contact.getName();
             String htmlContent = "<html><body><h1>New contact message from " + contact.getName() + "</h1><p><b>User e-mail address: </b>" + contact.getEmail() + "</p><p><b>User message: </b>" + contact.getMessage() + "</p></body></html>";
             emailService.sendHtmlEmail(to, subject, htmlContent);
